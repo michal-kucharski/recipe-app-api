@@ -1,12 +1,14 @@
 const { MongoClient, ServerApiVersion } = require('mongodb');
+import { MongoError } from 'mongodb';
+require('dotenv').config()
 
-const uri = "mongodb+srv://root:root@recipe-app-db.go8nl8a.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.DB_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
-client.connect((err: any) => {
-  const collection = client.db("recipe-app-db").collection("recipes");
-  console.log(err);
-  console.log(collection);
-  // perform actions on the collection object
-  client.close();
+client.connect((err: MongoError) => {
+    if(err) {
+        return err.code;
+    }
 });
+
+export const db = client.db("recipe-app-db")
