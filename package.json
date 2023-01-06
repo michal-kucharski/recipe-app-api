@@ -11,12 +11,13 @@
   "author": "Michał Kucharski",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^6.8.2"
+    "mongodb": "^4.13.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
-    "@types/mongoose": "^5.11.97",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "^18.11.4",
     "ts-loader": "^9.4.2",
     "typescript": "^4.8.4",
