@@ -1,17 +1,9 @@
-import express, { Request, Response } from 'express';
-import { db } from './utils/db';
+import express from 'express';
+import { recipesRouter } from '@src/routes/recipes';
 
 const app = express();
-
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello, World!');
-});
+app.use('/recipes', recipesRouter);
 
 app.listen(3000, () => {
   console.log('Express server listening on port 3000');
 });
-
-(async() => {
-  const results = await db.collection("recipes").find().toArray();
-  console.log(results);
-})();
