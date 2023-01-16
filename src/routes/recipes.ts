@@ -1,4 +1,4 @@
-import express, { query, Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import { addNewRecipe, getRecipes, getSingleRecipe } from '@src/controllers/recipes';
 
 export const recipesRouter = express.Router();

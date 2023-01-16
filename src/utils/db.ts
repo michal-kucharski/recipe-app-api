@@ -13,3 +13,4 @@ client.connect((err: MongoError) => {
 
 export const db = client.db("recipe-app-db")
 export const recipes = db.collection("recipes");
+export const users = db.collection("users");
